@@ -34,7 +34,7 @@ public class KeepWidgetReceiver extends BroadcastReceiver {
 	private String NotificationText;
 	
 	// Notification constant
-	public static final int NOTIFICATION_ID = 0;
+	public static final int NOTIFICATION_ID = 010110111;
 
 	@Override
 	public void onReceive(Context context, Intent intent) {
@@ -68,6 +68,10 @@ public class KeepWidgetReceiver extends BroadcastReceiver {
 		if (sCpuWakeLock != null) {
 			sCpuWakeLock.release();
 			sCpuWakeLock = null;
+			
+			// Clear notification
+			mNotificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+			mNotificationManager.cancel(NOTIFICATION_ID);
 		} else {
 			PowerManager pm = (PowerManager) context
 					.getSystemService(Context.POWER_SERVICE);
@@ -88,7 +92,7 @@ public class KeepWidgetReceiver extends BroadcastReceiver {
 		ScrollingText = context.getString(R.string.keep_activated_scroll);
 		NotificationText = context.getString(R.string.keep_activated_notify);
 		
-		// Trigger a notification that, when clicked, will activate airplane mode
+		// Trigger a notification that, when clicked, will release the wake lock
 		mNotificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 		PendingIntent contentIntent = KeepWidgetProvider.buildButtonPendingIntent(context);
 		
