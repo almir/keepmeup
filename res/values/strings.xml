@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2013 GenieCode
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+
+    <string name="app_name">Keep Me Up</string>
+    <string name="keep_message_add_widget_11up">To place the widget on your home screen choose the \"Keep Me Up\" from the \"Widgets\" tab in your app drawer.\nLook for the square yellow icon with lightbulb.</string>
+    <string name="keep_message_add_widget_pre11">To place the widget on your home screen long press on any open spot on one of your home screen pages, tap \"Widgets\" from the list of choices and select the \"Keep Me Up\" widget.\nLook for the square yellow icon with lightbulb.</string>
+    <string name="keep_activated_scroll">Screen On Active</string>
+	<string name="keep_activated_notify">Tap this notification to deactivate.</string>
+
+</resources>
