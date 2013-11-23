@@ -18,7 +18,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_margin="8dip"
+    android:layout_margin="5dp"
     android:background="@drawable/widget_shape" >
 
     <ImageView
@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center_horizontal|center_vertical"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="3dp"
         android:src="@drawable/bulb_off"
         android:contentDescription="@string/app_name" />
     
