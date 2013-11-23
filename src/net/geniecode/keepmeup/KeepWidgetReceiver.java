@@ -45,10 +45,11 @@ public class KeepWidgetReceiver extends BroadcastReceiver {
 
 	private void updateWidget(Context context) {
 		final RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.widget_layout);
-		remoteViews.setImageViewResource(R.id.image_button, changeImage());
+		remoteViews.setImageViewResource(R.id.image_button, setIcon());
+		remoteViews.setTextViewText(R.id.text_onoff, setText(context));
 		
 		//REMEMBER TO ALWAYS REFRESH YOUR BUTTON CLICK LISTENERS!!!
-		remoteViews.setOnClickPendingIntent(R.id.image_button,
+		remoteViews.setOnClickPendingIntent(R.id.layout,
 				KeepWidgetProvider.buildButtonPendingIntent(context));
 
 		KeepWidgetProvider.pushWidgetUpdate(context.getApplicationContext(), remoteViews);
@@ -57,7 +58,17 @@ public class KeepWidgetReceiver extends BroadcastReceiver {
 		setWakeLock(context);
 	}
 
-	private int changeImage() {
+	private CharSequence setText(Context context) {
+		CharSequence text;
+		if (sCpuWakeLock != null) {
+			text = context.getString(R.string.off);
+		} else {
+			text = context.getString(R.string.on);
+		}
+		return text;
+	}
+
+	private int setIcon() {
 		clickCount++;
 		return clickCount % 2 == 0 ? R.drawable.bulb_off : R.drawable.bulb_on;
 	}

@@ -32,7 +32,7 @@ public class KeepWidgetProvider extends AppWidgetProvider {
 		// Get the layout for the App Widget and attach an on-click listener
         // to the button
         RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.widget_layout);
-        remoteViews.setOnClickPendingIntent(R.id.image_button, buildButtonPendingIntent(context));
+        remoteViews.setOnClickPendingIntent(R.id.layout, buildButtonPendingIntent(context));
         
         pushWidgetUpdate(context, remoteViews);
 	}
