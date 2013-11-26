@@ -46,7 +46,6 @@ public class KeepWidgetReceiver extends BroadcastReceiver {
 	private void updateWidget(Context context) {
 		final RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.widget_layout);
 		remoteViews.setImageViewResource(R.id.image_button, setIcon());
-		remoteViews.setTextViewText(R.id.text_onoff, setText(context));
 		
 		//REMEMBER TO ALWAYS REFRESH YOUR BUTTON CLICK LISTENERS!!!
 		remoteViews.setOnClickPendingIntent(R.id.layout,
@@ -56,16 +55,6 @@ public class KeepWidgetReceiver extends BroadcastReceiver {
 		
 		// Now acquire or release wake lock on screen
 		setWakeLock(context);
-	}
-
-	private CharSequence setText(Context context) {
-		CharSequence text;
-		if (sCpuWakeLock != null) {
-			text = context.getString(R.string.off);
-		} else {
-			text = context.getString(R.string.on);
-		}
-		return text;
 	}
 
 	private int setIcon() {
