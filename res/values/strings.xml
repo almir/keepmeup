@@ -20,7 +20,5 @@
     <string name="keep_message_add_widget_pre11">To place the widget on your home screen long press on any open spot on one of your home screen pages, tap \"Widgets\" from the list of choices and select the \"Keep Me Up\" widget.\nLook for the square yellow icon with lightbulb.</string>
     <string name="keep_activated_scroll">Screen On Active</string>
 	<string name="keep_activated_notify">Tap this notification to deactivate.</string>
-	<string name="off">Off</string>
-	<string name="on">On</string>
 
 </resources>
